@@ -1,0 +1,9 @@
+
+/usr/bin/docker service rm backend-service 
+
+
+/usr/bin/docker image build -t rutujaawankar/backend .
+
+/usr/bin/docker image push rutujaawankar/backend
+
+/usr/bin/docker service create --name backend-service --replicas 2 -p 4000:4000 rutujaawankar/backend
